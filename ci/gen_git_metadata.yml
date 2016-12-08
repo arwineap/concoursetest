@@ -7,16 +7,16 @@ image_resource:
     repository: concourse/git-resource
     tag: latest
 
-  inputs:
+inputs:
   - name: github-concoursetest
 
-  outputs:
+outputs:
   - name: git-metadata
 
-  run:
-    path: sh
-    args:
-    - -exc
-    - |
-      cd github-concoursetest
-      git branch | grep -v HEAD | awk {'print $1'} | sed 's/release\//release-/g' > ../git-metadata/branch
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    cd github-concoursetest
+    git branch | grep -v HEAD | awk {'print $1'} | sed 's/release\//release-/g' > ../git-metadata/branch
