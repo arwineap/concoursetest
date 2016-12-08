@@ -3,33 +3,33 @@ jobs:
     public: true
     serial: true
     plan:
-    - get: github-angrypigs
+    - get: github-concoursetest
       trigger: true
 
     - task: gen-git-metadata
-      file: angrypigs/gen_git_metadata.yml
+      file: github-concoursetest/gen_git_metadata.yml
 
     - put: angrypigs-docker-image
       params:
-        build: github-angrypigs
+        build: github-concoursetest
         tag: git-metadata/branch
 
 resources:
-- name: github-angrypigs
-  type: git-branch-heads
-  source:
-    uri: https://github.com/jensendw/angrypigs.git
-    branch: [release/*,develop]
+  - name: github-concoursetest
+    type: git-branch-heads
+    source:
+      uri: https://github.com/jensendw/concoursetest.git
+      branch: [release/*,develop]
 
-- name: angrypigs-docker-image
-  type: docker-image
-  source:
-    email: {{docker-hub-email}}
-    username: {{docker-hub-username}}
-    password: {{docker-hub-password}}
-    repository: {{docker-hub-image-angrypigs}}
+  - name: angrypigs-docker-image
+    type: docker-image
+    source:
+      email: {{docker-hub-email}}
+      username: {{docker-hub-username}}
+      password: {{docker-hub-password}}
+      repository: {{docker-hub-image-angrypigs}}
 
 resource_types:
-- name: git-branch-heads
-  type: docker-image
-  source: {repository: vito/git-branch-heads-resource}
+  - name: git-branch-heads
+    type: docker-image
+    source: {repository: vito/git-branch-heads-resource}
