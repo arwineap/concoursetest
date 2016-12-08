@@ -7,7 +7,7 @@ jobs:
       trigger: true
 
     - task: gen-git-metadata
-      file: github-concoursetest/gen_git_metadata.yml
+      file: github-concoursetest/ci/gen_git_metadata.yml
 
     - put: angrypigs-docker-image
       params:

@@ -8,7 +8,7 @@ image_resource:
     tag: latest
 
   inputs:
-  - name: github-angrypigs
+  - name: github-concoursetest
 
   outputs:
   - name: git-metadata
