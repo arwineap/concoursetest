@@ -1,0 +1,22 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: concourse/git-resource
+    tag: latest
+
+  inputs:
+  - name: github-angrypigs
+
+  outputs:
+  - name: git-metadata
+
+  run:
+    path: sh
+    args:
+    - -exc
+    - |
+      cd github-angrypigs
+      git branch | grep -v HEAD | awk {'print $1'} | sed 's/release\//release-/g' > ../git-metadata/branch
