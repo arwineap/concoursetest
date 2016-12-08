@@ -18,5 +18,5 @@ image_resource:
     args:
     - -exc
     - |
-      cd github-angrypigs
+      cd github-concoursetest
       git branch | grep -v HEAD | awk {'print $1'} | sed 's/release\//release-/g' > ../git-metadata/branch

@@ -19,7 +19,7 @@ resources:
     type: git-branch-heads
     source:
       uri: https://github.com/jensendw/concoursetest.git
-      branch: [release/*,develop]
+      branch: [release/*,develop,master]
 
   - name: angrypigs-docker-image
     type: docker-image
