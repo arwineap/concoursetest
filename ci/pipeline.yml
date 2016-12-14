@@ -23,6 +23,8 @@ resources:
       ignore_paths:
         - ci/gen_git_metadata.yml
         - ci/pipeline.yml
+        - ci/
+        - ci/*
 
   - name: angrypigs-docker-image
     type: docker-image
