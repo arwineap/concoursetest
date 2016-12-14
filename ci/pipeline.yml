@@ -12,7 +12,6 @@ jobs:
     - put: angrypigs-docker-image
       params:
         build: github-concoursetest
-        tag: ignore
 
 resources:
   - name: github-concoursetest
