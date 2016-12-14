@@ -18,5 +18,5 @@ run:
   args:
   - -exc
   - |
-    cd github-concoursetest
+    cd concoursetest-github
     git branch | grep -v HEAD | awk {'print $1'} | sed 's/release\//release-/g' > ../git-metadata/branch
