@@ -3,19 +3,19 @@ jobs:
     public: true
     serial: true
     plan:
-    - get: github-concoursetest
+    - get: concoursetest-github
       trigger: true
 
     - task: gen-git-metadata
-      file: github-concoursetest/ci/gen_git_metadata.yml
+      file: concoursetest-github/ci/gen_git_metadata.yml
 
     - put: angrypigs-docker-image
       params:
-        build: github-concoursetest
+        build: concoursetest-github
         tag: git-metadata/branch
 
 resources:
-  - name: github-concoursetest
+  - name: concoursetest-github
     type: git-branch-heads
     source:
       uri: https://github.com/jensendw/concoursetest.git
