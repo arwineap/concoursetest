@@ -19,11 +19,7 @@ resources:
     source:
       uri: https://github.com/jensendw/concoursetest.git
       branch: master
-      ignore_paths:
-        - ci/gen_git_metadata.yml
-        - ci/pipeline.yml
-        - ci/
-        - ci/*
+      ignore_paths: [ci/mooh]
 
   - name: angrypigs-docker-image
     type: docker-image
