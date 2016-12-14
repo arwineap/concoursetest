@@ -6,17 +6,17 @@ jobs:
     - get: github-concoursetest
       trigger: true
 
-#    - task: gen-git-metadata
-#      file: github-concoursetest/ci/gen_git_metadata.yml
+    - task: gen-git-metadata
+      file: github-concoursetest/ci/gen_git_metadata.yml
 
     - put: angrypigs-docker-image
       params:
         build: github-concoursetest
-        tag: ignore
+        tag: git-metadata/branch
 
 resources:
   - name: github-concoursetest
-    type: git
+    type: git-branch-heads
     source:
       uri: https://github.com/jensendw/concoursetest.git
       branch:
