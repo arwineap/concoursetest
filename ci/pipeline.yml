@@ -19,10 +19,7 @@ resources:
     type: git
     source:
       uri: https://github.com/jensendw/concoursetest.git
-      branch:
-        - release/*
-        - develop
-        - master
+      branch: master
       ignore_paths:
         - ci/gen_git_metadata.yml
         - ci/pipeline.yml
