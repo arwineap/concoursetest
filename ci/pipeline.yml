@@ -18,7 +18,7 @@ resources:
   - name: github-concoursetest
     type: git-branch-heads
     source:
-      uri: https://github.com/jensendw/concoursetest.git
+      uri: https://github.com/arwineap/concoursetest.git
       branch: [release/*,develop,master]
       ignore_paths:
         - ci/gen_git_metadata.yml
