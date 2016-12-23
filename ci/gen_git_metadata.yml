@@ -8,7 +8,7 @@ image_resource:
     tag: latest
 
 inputs:
-  - name: concoursetest-github
+  - name: github-concoursetest
 
 outputs:
   - name: git-metadata
