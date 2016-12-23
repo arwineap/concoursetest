@@ -18,12 +18,9 @@ resources:
   - name: concoursetest-github
     type: git-branch-heads
     source:
-      uri: https://github.com/jensendw/concoursetest.git
-      branch:
-        - release/*
-        - develop
-        - master
-      ignore_paths: [ci/]
+      uri: https://github.com/arwineap/concoursetest.git
+      branch: [release/*,develop,master]
+      ignore_paths: ci/
 
   - name: angrypigs-docker-image
     type: docker-image
